@@ -4,12 +4,15 @@ const HtmlWebpackPlugin = require('html-webpack-plugin')
 module.exports = {
   // Where files should be sent once they are bundled
  entry: {
-     index: "/src/index.js"
+     index: "/src/index.tsx"
  },
  output: {
    path: path.join(__dirname, '/dist/js'),
    filename: '[name].js'
  },
+ resolve: {
+  extensions: ['.ts', '.tsx', '.js']
+},
   // webpack 5 comes with devServer which loads in development mode
  devServer: {
    allowedHosts: [ 'virtual-server'],
@@ -23,7 +26,7 @@ module.exports = {
  module: {
    rules: [
      {
-       test: /\.(js|jsx)$/,
+       test: /\.(js|jsx|ts|tsx)$/,
        exclude: /nodeModules/,
        use: {
          loader: 'babel-loader'
