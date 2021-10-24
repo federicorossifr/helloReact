@@ -13,15 +13,7 @@ module.exports = {
  resolve: {
   extensions: ['.ts', '.tsx', '.js']
 },
-  // webpack 5 comes with devServer which loads in development mode
- devServer: {
-   allowedHosts: [ 'virtual-server'],
-   port: 3000,
-   static: [
-    {directory: path.join(__dirname, 'public'), publicPath:"/",watch: true,},
-    {directory: path.join(__dirname, 'dist'), publicPath:"/dist"},
-   ]
- },
+
   // Rules of how webpack will take our files, complie & bundle them for the browser 
  module: {
    rules: [
